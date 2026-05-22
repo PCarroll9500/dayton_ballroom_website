@@ -109,30 +109,49 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="mb-16 grid grid-cols-1 sm:grid-cols-2 gap-10">
-        <div>
-          <h2 className="font-display text-2xl font-bold text-burgundy mb-5">
-            Contact Us
-          </h2>
-          <div className="space-y-4 text-sm">
+      {/* Map + Contact */}
+      <section className="mb-16">
+        <h2 className="font-display text-2xl font-bold text-burgundy mb-6">
+          Find Us
+        </h2>
+
+        {/* Google Maps embed */}
+        <div className="rounded-2xl overflow-hidden border border-cream-dark shadow-md mb-8" style={{ height: "400px" }}>
+          <iframe
+            src="https://www.google.com/maps?q=2150+Arbor+Blvd+Dayton+OH+45439&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Dayton Ballroom Dance Club location"
+          />
+        </div>
+
+        {/* Contact details + email list */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="space-y-5 text-base">
             <div className="flex gap-3 items-start">
-              <span className="text-gold text-lg mt-0.5">📍</span>
+              <span className="text-gold text-xl mt-0.5">📍</span>
               <div>
-                <p className="font-medium text-dark">Location</p>
-                <p className="text-muted">Dayton, Ohio</p>
+                <p className="font-semibold text-dark">Location</p>
+                <p className="text-muted">Arbor Event Center</p>
+                <p className="text-muted">2150 Arbor Blvd, Dayton, OH 45439</p>
                 <a
-                  href="/about"
-                  className="text-gold text-xs hover:underline"
+                  href="https://maps.google.com/?q=2150+Arbor+Blvd+Dayton+OH+45439"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold text-sm hover:underline"
                 >
-                  View on map →
+                  Open in Google Maps →
                 </a>
               </div>
             </div>
             <div className="flex gap-3 items-start">
-              <span className="text-gold text-lg mt-0.5">✉️</span>
+              <span className="text-gold text-xl mt-0.5">✉️</span>
               <div>
-                <p className="font-medium text-dark">Email</p>
+                <p className="font-semibold text-dark">Email</p>
                 <a
                   href="mailto:info@daytonballroom.org"
                   className="text-gold hover:underline"
@@ -142,32 +161,33 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex gap-3 items-start">
-              <span className="text-gold text-lg mt-0.5">📅</span>
+              <span className="text-gold text-xl mt-0.5">📅</span>
               <div>
-                <p className="font-medium text-dark">Events</p>
-                <p className="text-muted">
-                  Held on the first Saturday of each month, 7:30 PM
-                </p>
+                <p className="font-semibold text-dark">Dance Nights</p>
+                <p className="text-muted">First Saturday of every month</p>
+                <p className="text-muted">Doors open 7:00 PM · Dancing at 7:30 PM</p>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Email list signup */}
-        <div className="bg-white rounded-2xl p-6 border border-cream-dark shadow-sm">
-          <h3 className="font-display text-xl font-bold text-burgundy mb-2">
-            Join Our Email List
-          </h3>
-          <p className="text-muted text-sm mb-4">
-            Get event announcements, newsletters, and club updates delivered to
-            your inbox.
-          </p>
-          <a
-            href="mailto:info@daytonballroom.org?subject=Email%20List%20Signup"
-            className="block w-full bg-gold hover:bg-gold-light text-dark font-semibold py-3 rounded-full transition-colors text-sm text-center"
-          >
-            Sign Up via Email
-          </a>
+          {/* Email list signup */}
+          <div className="bg-white rounded-2xl p-7 border border-cream-dark shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 className="font-display text-xl font-bold text-burgundy mb-2">
+                Join Our Email List
+              </h3>
+              <p className="text-muted text-base mb-5">
+                Get event announcements, newsletters, and club updates delivered
+                straight to your inbox.
+              </p>
+            </div>
+            <a
+              href="mailto:info@daytonballroom.org?subject=Email%20List%20Signup"
+              className="block w-full bg-gold hover:bg-gold-light text-dark font-bold py-4 rounded-full transition-colors text-base text-center"
+            >
+              Sign Up via Email
+            </a>
+          </div>
         </div>
       </section>
 
