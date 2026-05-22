@@ -17,16 +17,27 @@ export default function Navbar() {
 
   return (
     <header className="bg-burgundy text-cream shadow-lg sticky top-0 z-50">
+      {/* Top accent stripe */}
+      <div className="h-1 bg-gradient-to-r from-burgundy-dark via-gold to-burgundy-dark" />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
+        {/* Brand */}
         <Link
           href="/"
-          className="font-display text-xl sm:text-2xl font-semibold tracking-wide hover:text-gold-light transition-colors leading-tight"
+          className="flex items-center gap-3 group"
           onClick={() => setOpen(false)}
         >
-          Dayton Ballroom<br className="hidden sm:block" />
-          <span className="text-gold text-sm font-normal tracking-widest uppercase hidden sm:block">
-            Dance Club
+          <span className="text-gold text-3xl leading-none group-hover:scale-110 transition-transform">
+            ♫
           </span>
+          <div>
+            <div className="font-display text-xl font-bold tracking-wide leading-tight group-hover:text-gold-light transition-colors">
+              Dayton Ballroom
+            </div>
+            <div className="text-gold text-xs font-semibold uppercase tracking-widest leading-none">
+              Dance Club · Est. 1960
+            </div>
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -48,38 +59,35 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-3 rounded hover:bg-burgundy-dark transition-colors"
+          className="md:hidden p-3 rounded-lg hover:bg-burgundy-dark transition-colors"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={open}
         >
+          <span className="block w-6 h-0.5 bg-cream mb-1.5 transition-transform" />
           <span className="block w-6 h-0.5 bg-cream mb-1.5" />
-          <span className="block w-6 h-0.5 bg-cream mb-1.5" />
-          <span className="block w-6 h-0.5 bg-cream" />
+          <span className="block w-6 h-0.5 bg-cream transition-transform" />
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden bg-burgundy-dark border-t border-cream/10 px-4 pb-4">
+        <nav className="md:hidden bg-burgundy-dark border-t border-cream/10 px-4 pb-5">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className={`block py-4 text-base font-medium border-b border-cream/10 transition-colors hover:text-gold-light ${
+              className={`block py-4 text-lg font-medium border-b border-cream/10 transition-colors hover:text-gold-light ${
                 pathname === href ? "text-gold" : "text-cream/90"
               }`}
             >
               {label}
             </Link>
           ))}
-          <a
-            href="mailto:info@daytonballroom.org"
-            className="block pt-4 text-sm text-cream/60 hover:text-gold transition-colors"
-          >
-            info@daytonballroom.org
-          </a>
+          <p className="pt-4 text-sm text-cream/50 text-center">
+            ♪ First Saturday of every month · 7:30 PM ♪
+          </p>
         </nav>
       )}
     </header>
