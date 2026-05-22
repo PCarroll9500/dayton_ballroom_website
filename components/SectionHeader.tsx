@@ -11,16 +11,16 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={`mb-10 ${centered ? "text-center" : ""}`}>
-      <h2 className="font-display text-3xl sm:text-4xl font-bold text-burgundy mb-3">
+      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-burgundy mb-4 leading-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-muted text-lg max-w-2xl leading-relaxed">
+        <p className="text-muted text-lg sm:text-xl max-w-2xl leading-relaxed">
           {subtitle}
         </p>
       )}
       <div
-        className={`mt-4 h-1 w-16 bg-gold rounded-full ${centered ? "mx-auto" : ""}`}
+        className={`mt-5 h-1 w-20 bg-gold rounded-full ${centered ? "mx-auto" : ""}`}
       />
     </div>
   );

@@ -8,13 +8,19 @@
   --color-gold: #C9973A;
   --color-gold-light: #E0B45A;
   --color-dark: #2D2D2D;
-  --color-muted: #6B6B6B;
+  --color-muted: #5A5A5A;
 
   --font-display: var(--font-playfair);
   --font-sans: var(--font-inter);
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+}
+
 body {
   background-color: #FAF7F2;
   color: #2D2D2D;
+  line-height: 1.75;
 }
